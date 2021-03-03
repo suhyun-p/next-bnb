@@ -4,7 +4,8 @@ import AirbnbLogoIcon from "../public/static/svg/logo/logo.svg";
 import AirbnbLogoTextIcon from "../public/static/svg/logo/logo_text.svg";
 import Link from "next/link";
 import palette from "../styles/palette";
-import MordalPortal from "./MordalPortal";
+// import MordalPortal from "./MordalPortal";
+import useModal from "../hooks/useModal";
 import SignUpModal from "./auth/SignUpMordal";
 
 const Container = styled.div`
@@ -82,7 +83,7 @@ const Container = styled.div`
 `;
 
 const Header: React.FC = () => {
-    const [modalOpened, setModalOpened] = useState(false);
+    const {openModal, ModalPortal} = useModal();
     return (
         <Container>
             <Link href="/">
@@ -92,18 +93,16 @@ const Header: React.FC = () => {
                 </div>
             </Link>
             <div className="header-auth-buttons">
-                <button type="button" className="header-sign-up-button" onClick={() => setModalOpened(true)}>
+                <button type="button" className="header-sign-up-button" onClick={openModal}>
                     회원가입
                 </button>
                 <button type="button" className="header-login-button">
                     로그인
                 </button>
             </div>
-            {modalOpened && (
-                <MordalPortal closePortal={() => setModalOpened(false)}>
-                    <SignUpModal/>
-                </MordalPortal>
-            )}
+            <ModalPortal>
+                <SignUpModal/>
+            </ModalPortal>
         </Container>
     );
 };
