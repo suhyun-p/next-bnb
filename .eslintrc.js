@@ -54,6 +54,7 @@ module.exports = {
                 tsx: "never",
             }, // import 시 확장자명은 사용하지 않는다
         ],
+        'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
     },
     "settings": {
         "import/resolver": {

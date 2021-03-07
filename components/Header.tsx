@@ -6,7 +6,7 @@ import Link from "next/link";
 import palette from "../styles/palette";
 // import MordalPortal from "./MordalPortal";
 import useModal from "../hooks/useModal";
-import SignUpModal from "./auth/SignUpMordal";
+import SignUpModal from "./auths/SignUpMordal"
 
 const Container = styled.div`
     position: sticky;
