@@ -55,6 +55,9 @@ module.exports = {
             }, // import 시 확장자명은 사용하지 않는다
         ],
         'react/jsx-filename-extension': [2, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+        // note you must disable the base rule as it can report incorrect errors
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
     },
     "settings": {
         "import/resolver": {
